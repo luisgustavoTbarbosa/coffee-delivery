@@ -28,3 +28,30 @@ export const AboutDescription = styled.p`
   font-size: 1.25rem;
   line-height: 130%;
 `
+
+export const CoffeListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3.375rem 0;
+  padding-top: 2rem;
+
+  strong {
+    color: ${(props) => props.theme["base-subtitle"]};
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 2rem;
+    line-height: 130%;
+  }
+`
+
+export const CoffeList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 2.5rem;
+`
+
+export const ProductCard = styled.div`
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 6px 35px 6px 36px;
+  background-color: ${(props) => props.theme["base-card"]};
+`
