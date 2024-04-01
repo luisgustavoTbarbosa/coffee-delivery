@@ -1,4 +1,4 @@
-import { AboutContainer, AboutDescription, AboutTitle, CoffeList, CoffeListContainer, ProductCard } from "./styles";
+import { AboutContainer, AboutDescription, AboutTitle, CoffeList, CoffeListContainer, ProductCard, ProductCardDescription, ProductCardFigure, ProductCardPrice, ProductCardTag, ProductCardTagContainer } from "./styles";
 
 import aboutBanner from '../../assets/about-banner.png'
 import { Topics } from "./components/Topics";
@@ -9,7 +9,7 @@ const coffeeCatalog = [
     description: 'O tradicional café feito com água quente e grãos moídos',
     price: 4.20,
     tags: ['Tradicional'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Expresso.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Expresso.png',
     stock: 11
   },
   {
@@ -17,7 +17,7 @@ const coffeeCatalog = [
     description: 'Expresso diluído, menos intenso que o tradicional',
     price: 5.00,
     tags: ['Tradicional'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Americano.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Americano.png',
     stock: 20
   },
   {
@@ -25,7 +25,7 @@ const coffeeCatalog = [
     description: 'Café expresso tradicional com espuma cremosa',
     price: 5.50,
     tags: ['Tradicional'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Expresso_Cremoso.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Expresso_Cremoso.png',
     stock: 20
   },
   {
@@ -33,7 +33,7 @@ const coffeeCatalog = [
     description: 'Bebida preparada com café expresso e cubos de gelo',
     price: 5.00,
     tags: ['Tradicional', 'Gelado'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Cafe_Gelado.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Cafe_Gelado.png',
     stock: 45
   },
   {
@@ -41,7 +41,7 @@ const coffeeCatalog = [
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
     price: 4.20,
     tags: ['Tradicional', 'Com leite'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Cafe_com_Leite.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Cafe_com_Leite.png',
     stock: 35
   },
   {
@@ -49,7 +49,7 @@ const coffeeCatalog = [
     description: 'Uma dose de café expresso com o dobro de leite e espuma cremosa',
     price: 6.00,
     tags: ['Tradicional', 'Com leite'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Latte.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Latte.png',
     stock: 5
   },
   {
@@ -57,7 +57,7 @@ const coffeeCatalog = [
     description: 'Bebida com canela feita de doses iguais de café, leite e espuma',
     price: 6.00,
     tags: ['Tradicional', 'Com leite'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Capuccino.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Capuccino.png',
     stock: 7
   },
   {
@@ -65,7 +65,7 @@ const coffeeCatalog = [
     description: 'Café expresso misturado com um pouco de leite quente e espuma',
     price: 6.00,
     tags: ['Tradicional', 'Com leite'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Macchiato.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Macchiato.png',
     stock: 14
   },
   {
@@ -73,7 +73,7 @@ const coffeeCatalog = [
     description: 'Café expresso com calda de chocolate, pouco leite e espuma',
     price: 7.40,
     tags: ['Tradicional', 'Com leite'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Mochaccino.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Mochaccino.png',
     stock: 11
   },
   {
@@ -81,7 +81,7 @@ const coffeeCatalog = [
     description: 'Bebida feita com chocolate dissolvido no leite quente e café',
     price: 7.40,
     tags: ['Especial', 'Com leite'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Chocolate_Quente.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Chocolate_Quente.png',
     stock: 11
   },
   {
@@ -89,7 +89,7 @@ const coffeeCatalog = [
     description: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
     price: 12,
     tags: ['Especial', 'Alcoólico', 'Gelado'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Cubano.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Cubano.png',
     stock: 22
   },
   {
@@ -97,7 +97,7 @@ const coffeeCatalog = [
     description: 'Bebida adocicada preparada com café e leite de coco',
     price: 11,
     tags: ['Especial'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Havaiano.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Havaiano.png',
     stock: 13
   },
   {
@@ -105,7 +105,7 @@ const coffeeCatalog = [
     description: 'Bebida preparada com grãos de café árabe e especiarias',
     price: 9.90,
     tags: ['Especial'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Arabe.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/53a210b945acd2d49ee0efa698735aedda76fac7/coffee-delivery/Arabe.png',
     stock: 21
   },
   {
@@ -113,12 +113,16 @@ const coffeeCatalog = [
     description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
     price: 12,
     tags: ['Especial', 'Alcoólico'],
-    image: 'https://github.com/luisgustavoTbarbosa/project-assets/blob/3b48acfc5ffcbfa9ebd32ae0c610806f07b1306b/coffee-delivery/Irlandes.png',
+    image: 'https://raw.githubusercontent.com/luisgustavoTbarbosa/project-assets/3b48acfc5ffcbfa9ebd32ae0c610806f07b1306b/coffee-delivery/Irlandes.png',
     stock: 8
   }
 ]
 
 export function Home() {
+  function formattingPrice(price: number) {
+    return new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(price)
+  }
+
   return (
     <main>
       <AboutContainer>
@@ -135,7 +139,23 @@ export function Home() {
           {
             coffeeCatalog.map((coffee) => {
               return <ProductCard>
-                      {coffee.name}
+                      <ProductCardFigure>
+                        <img src={coffee.image} alt={coffee.name} />
+                      </ProductCardFigure>
+                      <div className="content">
+                        <ProductCardTagContainer>
+                          {
+                            coffee.tags.map((tag) => {
+                              return <ProductCardTag>{tag}</ProductCardTag>
+                            })
+                          }
+                        </ProductCardTagContainer>
+                        <strong>{coffee.name}</strong>
+                        <ProductCardDescription>{coffee.description}</ProductCardDescription>
+                        <div className="actions">
+                          <ProductCardPrice>R$ <span>{formattingPrice(coffee.price)}</span></ProductCardPrice>
+                        </div>
+                      </div>
                     </ProductCard>
             })
           }
