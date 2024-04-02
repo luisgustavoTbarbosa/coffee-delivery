@@ -1,7 +1,14 @@
-import { AboutContainer, AboutDescription, AboutTitle, CoffeList, CoffeListContainer, ProductCard, ProductCardDescription, ProductCardFigure, ProductCardPrice, ProductCardTag, ProductCardTagContainer } from "./styles";
+import {
+    AboutContainer,
+    AboutDescription,
+    AboutTitle,
+    CoffeList,
+    CoffeListContainer
+  } from "./styles";
 
 import aboutBanner from '../../assets/about-banner.png'
 import { Topics } from "./components/Topics";
+import { ProductCard } from "./components/ProductCard";
 
 const coffeeCatalog = [
   {
@@ -119,10 +126,6 @@ const coffeeCatalog = [
 ]
 
 export function Home() {
-  function formattingPrice(price: number) {
-    return new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(price)
-  }
-
   return (
     <main>
       <AboutContainer>
@@ -138,25 +141,7 @@ export function Home() {
         <CoffeList>
           {
             coffeeCatalog.map((coffee) => {
-              return <ProductCard>
-                      <ProductCardFigure>
-                        <img src={coffee.image} alt={coffee.name} />
-                      </ProductCardFigure>
-                      <div className="content">
-                        <ProductCardTagContainer>
-                          {
-                            coffee.tags.map((tag) => {
-                              return <ProductCardTag>{tag}</ProductCardTag>
-                            })
-                          }
-                        </ProductCardTagContainer>
-                        <strong>{coffee.name}</strong>
-                        <ProductCardDescription>{coffee.description}</ProductCardDescription>
-                        <div className="actions">
-                          <ProductCardPrice>R$ <span>{formattingPrice(coffee.price)}</span></ProductCardPrice>
-                        </div>
-                      </div>
-                    </ProductCard>
+              return <ProductCard coffee={coffee} />
             })
           }
         </CoffeList>
