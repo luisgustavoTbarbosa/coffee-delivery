@@ -42,8 +42,12 @@ export const FormAddress = styled.form`
     border: none;
     background-color: ${(props) => props.theme["base-input"]};
     outline: 1px solid ${(props) => props.theme["base-button"]};
-    color: ${(props) => props.theme["base-label"]};
+    color: ${(props) => props.theme["base-text"]};
     font-size: 0.875rem;
+
+    &::placeholder {
+      color: ${(props) => props.theme["base-label"]};
+    }
 
     &#rua {
       width: 100%;
@@ -80,5 +84,10 @@ export const PaymentMethods = styled.div`
     font-size: 0.75rem;
     text-transform: uppercase;
     cursor: pointer;
+    transition: background .2s ease;
+
+    &:hover {
+      background-color: ${(props) => props.theme["base-hover"]};
+    }
   }
 `
