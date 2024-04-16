@@ -45,6 +45,35 @@ export const CartBox = styled.div`
   }
 `
 
+export const CardItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid ${(props) => props.theme["base-button"]};
+
+  img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  > div {
+    flex: 1;
+  }
+`
+
+export const CardItemContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+`
+
+export const CardItemActions = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`
+
 export const SubtotalBox = styled.div`
   margin-bottom: 1.5rem;
 
