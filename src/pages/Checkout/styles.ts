@@ -24,25 +24,6 @@ export const CartBox = styled.div`
   padding: 2.5rem;
   border-radius: 6px 44px 6px 44px;
   background-color: ${(props) => props.theme["base-card"]};
-
-  button {
-    width: 100%;
-    padding: 0.75rem 0.5rem;
-    border: none;
-    border-radius: 6px;
-    background-color: ${(props) => props.theme.yellow};
-    color: ${(props) => props.theme.white};
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 160%;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background .2s ease;
-
-    &:hover {
-      background-color: ${(props) => props.theme["yellow-dark"]};
-    }
-  }
 `
 
 export const CardItem = styled.div`
@@ -67,11 +48,72 @@ export const CardItemContent = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+
+  p {
+    color: ${(props) => props.theme["base-subtitle"]};
+    font-weight: 500;
+
+    &:last-of-type {
+      color: ${(props) => props.theme["base-text"]};
+      font-weight: 700;
+    }
+  }
 `
 
 export const CardItemActions = styled.div`
   display: flex;
   gap: 0.5rem;
+`
+
+export const QuantitySelector = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: ${(props) => props.theme["base-button"]};
+  border-radius: 6px;
+
+  button {
+    display: flex;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    
+    svg {
+      transition: all .2s ease;
+    }
+
+    &:hover {
+      svg {
+        fill: ${(props) => props.theme["purple-dark"]};
+      }
+    }
+  }
+
+  span {
+    color: ${(props) => props.theme["base-title"]};
+  }
+`
+
+export const RemoveButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  background: ${(props) => props.theme["base-button"]};
+  color: ${(props) => props.theme["base-text"]};
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s ease;
+
+  &:hover {
+    background: ${(props) => props.theme["base-hover"]};
+  }
 `
 
 export const SubtotalBox = styled.div`
@@ -93,5 +135,24 @@ export const SubtotalBox = styled.div`
 
   div + div {
     margin-top: 0.75rem;
+  }
+`
+
+export const ConfirmButton = styled.button`
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: ${(props) => props.theme.yellow};
+  color: ${(props) => props.theme.white};
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 160%;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s ease;
+
+  &:hover {
+    background-color: ${(props) => props.theme["yellow-dark"]};
   }
 `

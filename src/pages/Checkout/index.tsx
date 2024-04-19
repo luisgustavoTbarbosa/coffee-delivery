@@ -1,5 +1,6 @@
+import { Minus, Plus, Trash } from "@phosphor-icons/react";
 import { OrderForm } from "./OrderForm";
-import { CardItem, CardItemActions, CardItemContent, CartBox, CheckoutContainer, CompleteOrder, SelectedCoffees, SubtotalBox } from "./styles";
+import { CardItem, CardItemActions, CardItemContent, CartBox, CheckoutContainer, CompleteOrder, ConfirmButton, QuantitySelector, RemoveButton, SelectedCoffees, SubtotalBox } from "./styles";
 
 export function Checkout() {
   return (
@@ -20,8 +21,19 @@ export function Checkout() {
                   <p>R$ 9,99</p>
                 </CardItemContent>
                 <CardItemActions>
-                  <div>qty</div>
-                  <div>remove</div>
+                  <QuantitySelector>
+                    <button>
+                      <Minus size={16} color="#8047F8" weight="bold" />
+                    </button>
+                    <span>1</span>
+                    <button>
+                      <Plus size={16} color="#8047F8" weight="bold" />
+                    </button>
+                  </QuantitySelector>
+                  <RemoveButton>
+                    <Trash size={16} color="#8047F8" weight="bold" />
+                    Remover
+                  </RemoveButton>
                 </CardItemActions>
               </div>
             </CardItem>
@@ -33,8 +45,19 @@ export function Checkout() {
                   <p>R$ 9,99</p>
                 </CardItemContent>
                 <CardItemActions>
-                  <div>qty</div>
-                  <div>remove</div>
+                  <QuantitySelector>
+                    <button>
+                      <Minus size={16} color="#8047F8" weight="bold" />
+                    </button>
+                    <span>1</span>
+                    <button>
+                      <Plus size={16} color="#8047F8" weight="bold" />
+                    </button>
+                  </QuantitySelector>
+                  <RemoveButton>
+                    <Trash size={16} color="#8047F8" weight="bold" />
+                    Remover
+                  </RemoveButton>
                 </CardItemActions>
               </div>
             </CardItem>
@@ -53,7 +76,7 @@ export function Checkout() {
               <strong>R$ 33,20</strong>
             </div>
           </SubtotalBox>
-          <button>Confirmar pedido</button>
+          <ConfirmButton>Confirmar pedido</ConfirmButton>
         </CartBox>
       </SelectedCoffees>
     </CheckoutContainer>
