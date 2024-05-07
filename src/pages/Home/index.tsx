@@ -141,7 +141,7 @@ export function Home() {
         <CoffeList>
           {
             coffeeCatalog.map((coffee) => {
-              return <ProductCard coffee={coffee} />
+              return <ProductCard key={coffee.name} coffee={coffee} />
             })
           }
         </CoffeList>
