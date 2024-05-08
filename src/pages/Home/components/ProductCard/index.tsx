@@ -26,7 +26,6 @@ interface ProductCardProps {
 
 export function ProductCard({ coffee }: ProductCardProps) {
   const [quantity, setQuantity] = useState(1)
-  console.log('teste')
 
   function changeQuantity(operation: string) {
     if (operation === 'subtract' && quantity > 1) {
@@ -40,7 +39,6 @@ export function ProductCard({ coffee }: ProductCardProps) {
 
   function addProductToCart() {
     const cartItemsFromStorage = window.localStorage.getItem('cartItems')
-    console.log('cartItemsFromStorage', cartItemsFromStorage)
     const productToAdd = {
       name: coffee.name,
       price: coffee.price,

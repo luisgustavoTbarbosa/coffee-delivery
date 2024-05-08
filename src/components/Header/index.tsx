@@ -4,6 +4,10 @@ import { NavLink } from 'react-router-dom'
 import { MapPin, ShoppingCart } from '@phosphor-icons/react'
 
 export function Header() {
+  const cartItemsFromStorage = window.localStorage.getItem('cartItems') || ''
+  
+  const cartItems = cartItemsFromStorage ? JSON.parse(cartItemsFromStorage) : ''
+
   return (
     <HeaderContainer>
       <nav>
@@ -17,6 +21,9 @@ export function Header() {
             <span>Franco da Rocha, SP</span>
           </LocationInfo>
           <NavLink to="/checagem" title="Carrinho">
+            {
+              cartItems && cartItems.length > 0 && <span>{cartItems.length}</span>
+            }
             <ShoppingCart size={22} weight="fill" color="#C47F17"/>
           </NavLink>
         </CheckoutContainer>

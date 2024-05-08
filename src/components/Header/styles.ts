@@ -15,6 +15,7 @@ export const CheckoutContainer = styled.div`
   gap: 0.75rem;
 
   a {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 0.625rem;
@@ -24,6 +25,22 @@ export const CheckoutContainer = styled.div`
 
     &:hover {
       background-color: #edde9e;
+    }
+
+    span {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 100px;
+      background-color: ${(props) => props.theme["yellow-dark"]};
+      color: ${(props) => props.theme["white"]};
+      font-size: 14px;
+      font-weight: 700;
     }
   }
 `
