@@ -1,12 +1,12 @@
+import { useContext } from 'react'
+import { NavLink } from 'react-router-dom'
+import { CartContext } from '../../contexts/CartContext'
 import { CheckoutContainer, HeaderContainer, LocationInfo } from './styles'
 import coffeeDeliveryLogo from '../../assets/coffee-delivery-logo.svg'
-import { NavLink } from 'react-router-dom'
 import { MapPin, ShoppingCart } from '@phosphor-icons/react'
 
 export function Header() {
-  const cartItemsFromStorage = window.localStorage.getItem('cartItems') || ''
-  
-  const cartItems = cartItemsFromStorage ? JSON.parse(cartItemsFromStorage) : ''
+  const { cartQuantity } = useContext(CartContext)
 
   return (
     <HeaderContainer>
@@ -22,7 +22,7 @@ export function Header() {
           </LocationInfo>
           <NavLink to="/checagem" title="Carrinho">
             {
-              cartItems && cartItems.length > 0 && <span>{cartItems.length}</span>
+              cartQuantity > 0 && <span>{cartQuantity}</span>
             }
             <ShoppingCart size={22} weight="fill" color="#C47F17"/>
           </NavLink>

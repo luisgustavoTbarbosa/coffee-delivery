@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Minus, Plus, ShoppingCart } from "@phosphor-icons/react"
 import {
           AddToCartButton,
@@ -12,6 +12,7 @@ import {
           ProductCardTagContainer,
           QuantitySelector
         } from "./styles"
+import { CartContext } from "../../../../contexts/CartContext"
 
 interface ProductCardProps {
   coffee: {
@@ -25,6 +26,8 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ coffee }: ProductCardProps) {
+  const { setCartQuantity } = useContext(CartContext)
+
   const [quantity, setQuantity] = useState(1)
 
   function changeQuantity(operation: string) {
@@ -49,14 +52,15 @@ export function ProductCard({ coffee }: ProductCardProps) {
 
     if (!cartItemsFromStorage) {
       window.localStorage.setItem('cartItems', JSON.stringify([productToAdd]))
+      setCartQuantity(1)
     }
 
     if (cartItemsFromStorage) {
       const cartItems = JSON.parse(cartItemsFromStorage)
-      console.log('cartItems', cartItems)
       cartItems.push(productToAdd)
-      console.log('cartItems', cartItems)
       window.localStorage.setItem('cartItems', JSON.stringify(cartItems))
+
+      setCartQuantity(cartItems.length)
     }
   }
 
