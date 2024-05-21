@@ -57,10 +57,28 @@ export function ProductCard({ coffee }: ProductCardProps) {
 
     if (cartItemsFromStorage) {
       const cartItems = JSON.parse(cartItemsFromStorage)
-      cartItems.push(productToAdd)
-      window.localStorage.setItem('cartItems', JSON.stringify(cartItems))
 
-      setCartQuantity(cartItems.length)
+      const newCartItems = cartItems.reduce((newItems: Array<object>, item: { name: string; quantity: number }) => {
+        if (item.name === productToAdd.name) {
+          item.quantity += productToAdd.quantity
+
+          newItems.push(item)
+        } else {
+          newItems.push(item)
+        }
+
+        return newItems
+      }, [])
+
+      const hasItemInCart = newCartItems.find((item: { name: string }) => item.name === productToAdd.name)
+
+      if (!hasItemInCart) {
+        newCartItems.push(productToAdd)
+      }
+
+      window.localStorage.setItem('cartItems', JSON.stringify(newCartItems))
+
+      setCartQuantity(newCartItems.length)
     }
   }
 
